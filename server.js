@@ -12,11 +12,19 @@ const PORT = 44441;
 //An HTTP request library that uses simple, user-friendly syntax to make requests
 const request = require('request');
 //socket.io declaration
+const { createServer } = require("http"); 
 const { Server } = require('socket.io');
+const httpServer = createServer(); 
 
-const io = new Server(PORT, {
-	/* options */
+console.log(`Listening on for socket connect on port: ${PORT}...`);
+
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*"
+  }
 });
+
+httpServer.listen(PORT);
 
 io.on('connection', (socket) => {
 	// HTTP request to the API
