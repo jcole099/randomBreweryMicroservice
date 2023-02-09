@@ -1,5 +1,5 @@
 // Author: James Cole
-// Date: 02/04/23
+// Date: 02/09/23
 // Prereqs: npm install socket.io request forever
 // Usage: npm start                         -non persistent
 // Usage: forever start server.js           -persistent
@@ -49,7 +49,7 @@ io.on('connection', (socket) => {
 //  Description: this is the code that I used for testing. Preserving it for future reference
 //  Prereqs: npm install socket.io-client
 
-// const { io } = require("socket.io-client");
+// import { io } from 'https://cdn.socket.io/4.3.2/socket.io.esm.min.js';
 // const socket = io("ws://jcole.net:44441");
 
 // socket.on("getRandBrewery", (breweryInfo) => {
